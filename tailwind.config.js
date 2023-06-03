@@ -12,6 +12,9 @@ module.exports = {
   theme: {
     extend: {
       screens: { sm: "480px", md: "768px", lg: "976px", xl: "1440pd" },
+      backdropBlur: {
+        'blur-lg': 'blur(20px)',
+      },
       animation: {
         fadeIn: "fadeIn 1.5s",
         bounce:
@@ -40,6 +43,11 @@ module.exports = {
           to: { transform: "translateY(0)" },
         },
       },
+    },
+  },
+  variants: {
+    extend: {
+      backdropBlur: ['responsive'],
     },
   },
   plugins: [],
