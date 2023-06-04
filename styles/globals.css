@@ -6,9 +6,93 @@
   background-color: #333;
 }
 
-:root {
-  /* --vscode-foreground: #ffffff;
-  --vscode-background: #1e1e1e; */
-  --vscode-primary: #007acc;
-  /* Add more colors from your VS Code theme */
+.btn-project {
+  padding: 1rem 2rem;
+  font-weight: 700;
+  background: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  border-bottom: 2px solid rgb(43, 116, 226);
+  border-right: 2px solid rgb(100, 162, 237);
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transition-duration: 0.5s;
+  transition-property: border-top, border-left, border-bottom, border-right,
+    box-shadow;
+}
+
+.btn-project:hover {
+  border-top: 2px solid rgb(100, 162, 237);
+  border-left: 2px solid rgb(100, 162, 237);
+  border-bottom: 2px solid rgb(155, 200, 255);
+  border-right: 2px solid rgb(133, 186, 252);
+  box-shadow: rgb(100, 162, 237) 5px 5px, rgb(133, 186, 252) 10px 10px,
+    rgb(155, 200, 255) 15px 15px;
+}
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+}
+
+/* plus sign */
+.sign {
+  /* Remove width property */
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px; /* Add min-width property */
+}
+
+.sign svg {
+  width: 22px;
+}
+
+/* .sign svg path {
+  fill: white;
+} */
+/* text */
+.label {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: 0.3s;
+}
+
+.Btn:hover .sign {
+  transition-duration: 0.3s;
+  justify-content: center;
+}
+/* hover effect button's text */
+.Btn:hover .label {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-left: 5px;
+  padding-right: calc(1ch * var(--label-length)); /* Add this line */
+  justify-content: center;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px, 2px);
 }

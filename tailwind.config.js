@@ -11,6 +11,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundColor: (theme) => ({
+        ...theme("colors"),
+        "light-background": "#EAF6FF",
+      }),
       screens: { sm: "480px", md: "768px", lg: "976px", xl: "1440pd" },
       backdropBlur: {
         'blur-lg': 'blur(20px)',
