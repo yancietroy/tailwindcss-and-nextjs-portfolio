@@ -1,15 +1,15 @@
-"use client" // this is a client component
-import React from "react"
-import { useState, useEffect} from "react"
-import { Link } from "react-scroll/modules"
-import { usePathname } from "next/navigation"
-import { useTheme } from "next-themes"
-import { RiMoonFill, RiSunLine } from "react-icons/ri"
-import { IoMdMenu, IoMdClose } from "react-icons/io"
+"use client"; // this is a client component
+import React from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-scroll/modules";
+import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
+import { RiMoonFill, RiSunLine } from "react-icons/ri";
+import { IoMdMenu, IoMdClose } from "react-icons/io";
 
 interface NavItem {
-  label: string
-  page: string
+  label: string;
+  page: string;
 }
 
 const NAV_ITEMS: Array<NavItem> = [
@@ -29,8 +29,7 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Contact",
     page: "contact",
   },
-  
-]
+];
 
 export default function Navbar() {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -51,31 +50,29 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [scrolled]); 
-
+  }, [scrolled]);
 
   return (
-<header
-  className={`w-full mx-auto px-4 sm:px-20 fixed top-0 z-50  ${
-    scrolled
-      ? "backdrop-filter backdrop-blur-sm bg-white bg-opacity-50 dark:bg-stone-900 dark:bg-opacity-50 firefox:bg-opacity-50"
-      : "bg-transparent dark:bg-transparent"
-  }`}
->
-
+    <header
+      className={`w-full mx-auto px-4 sm:px-20 fixed top-0 z-50  ${
+        scrolled
+          ? "backdrop-filter backdrop-blur-sm bg-white bg-opacity-50 dark:bg-stone-900 dark:bg-opacity-50 firefox:bg-opacity-50"
+          : "bg-transparent dark:bg-transparent"
+      }`}
+    >
       <div className="justify-between md:items-center md:flex">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <Link
-  to="home"
-  className="container flex items-center space-x-2 cursor-pointer"
-  activeClass="active"
-  spy={true}
-  smooth={true}
-  offset={-100}
-  duration={500}
-  onClick={() => setNavbar(!navbar)}
->
+            <Link
+              to="home"
+              className="container flex items-center space-x-2 cursor-pointer"
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              onClick={() => setNavbar(!navbar)}
+            >
               <div className="container flex items-center space-x-2 cursor-pointer">
                 <h2 className="text-2xl font-bold">@yancietroy</h2>
               </div>
@@ -104,7 +101,7 @@ export default function Navbar() {
                     key={idx}
                     to={item.page}
                     className={
-                      "block lg:inline-block text-neutral-900  hover:text-neutral-500 dark:text-neutral-100 cursor-pointer"
+                      `block lg:inline-block text-neutral-900 dark:text-neutral-100 cursor-pointer transition-colors hover:text-sky-600 dark:hover:text-sky-300`
                     }
                     activeClass="active"
                     spy={true}
@@ -115,19 +112,19 @@ export default function Navbar() {
                   >
                     {item.label}
                   </Link>
-                )
+                );
               })}
               {currentTheme === "dark" ? (
                 <button
                   onClick={() => setTheme("light")}
-                  className="bg-slate-100 p-2 rounded-xl"
+                  className="p-2 rounded-xl"
                 >
-                  <RiSunLine size={25} color="black" />
+                  <RiSunLine size={25} color="white" />
                 </button>
               ) : (
                 <button
                   onClick={() => setTheme("dark")}
-                  className="bg-slate-100 p-2 rounded-xl"
+                  className=" p-2 rounded-xl"
                 >
                   <RiMoonFill size={25} />
                 </button>
@@ -137,5 +134,5 @@ export default function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }

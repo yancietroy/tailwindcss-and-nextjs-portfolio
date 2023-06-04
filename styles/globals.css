@@ -3,5 +3,12 @@
 @tailwind utilities;
 
 .scrolled {
-    background-color: #333;
-  }
+  background-color: #333;
+}
+
+:root {
+  /* --vscode-foreground: #ffffff;
+  --vscode-background: #1e1e1e; */
+  --vscode-primary: #007acc;
+  /* Add more colors from your VS Code theme */
+}
